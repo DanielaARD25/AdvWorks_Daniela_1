@@ -1,0 +1,6 @@
+@AdvWorks_Daniela_1_HostAddress = http://localhost:5117
+
+GET {{AdvWorks_Daniela_1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
