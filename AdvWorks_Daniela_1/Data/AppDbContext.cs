@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AdvWorks_Daniela_1.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AdvWorks_Daniela_1.Data
 {
@@ -6,7 +7,8 @@ namespace AdvWorks_Daniela_1.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options): base(options)
         {
-
         }
+
+        public DbSet<SalesTerritory> SalesTerritory { get; set; }
     }
 }
