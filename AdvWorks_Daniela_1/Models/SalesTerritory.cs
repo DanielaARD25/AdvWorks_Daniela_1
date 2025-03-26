@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace AdvWorks_Daniela_1.Models
 {
+    [Table("SalesTerritory", Schema = "Sales")]
     public class SalesTerritory
     {
         [Key]

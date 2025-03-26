@@ -21,7 +21,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
             errorNumbersToAdd: null);
     }));
 
-//builder.Services.AddScoped<ICostumerRepository, CostumerRepository>();
+builder.Services.AddScoped<ISalesTerritoryRepository, SalesTerritoryRepository>();
 
 var app = builder.Build();
 
