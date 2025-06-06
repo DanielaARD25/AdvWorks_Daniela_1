@@ -16,7 +16,23 @@ namespace AdvWorks_Daniela_1.Data
 
         public async Task PutSalesBySpAsync(DataTable sales)
         {
-            // Implement the method logic here  
+            var cnx = _context.Database.GetDbConnection();
+            await using (cnx)
+            {
+                if (cnx.State != ConnectionState.Open)
+                    await cnx.OpenAsync();
+
+                using var command = cnx.CreateCommand();
+                command.CommandText = "usp_oe_PutSalesTerritoryTbl_v1";
+                command.CommandType = CommandType.StoredProcedure;
+                var salesParam = new SqlParameter("@SalesTerritoryTable", SqlDbType.Structured)
+                {
+                    Value = sales,
+                    TypeName = "dbo.SalesTerritoryTblType" // Usa el nombre exacto como está en SQL Server
+                };
+                command.Parameters.Add(salesParam);
+                await command.ExecuteNonQueryAsync();
+            }
         }
     }
 }
