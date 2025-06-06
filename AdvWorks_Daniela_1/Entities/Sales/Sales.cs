@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AdvWorks_Daniela_1.Entities.Sales
 {
-        [Table("SalesTerritory_Test", Schema = "dbo")]
+        [Table("SalesTerritory", Schema = "Sales")]
         public class SalesTerritoryEntity
         {
             [Key]
