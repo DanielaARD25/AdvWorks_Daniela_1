@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using AdvWorks_Daniela_1.Data;
 using AdvWorks_Daniela_1.Interface;
 using System.Data.SqlTypes;
+using AdvWorks_Daniela_1.Applications;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     }));
 
 builder.Services.AddScoped<ISalesTerritoryRepository, SalesTerritoryRepository>();
+builder.Services.AddScoped<ISalesTerritorySpRepository, SalesTerritorySpRepository>();
+builder.Services.AddScoped<ISalesTerritoryOperation, SalesTerritoryOperation>();
 
 var app = builder.Build();
 
